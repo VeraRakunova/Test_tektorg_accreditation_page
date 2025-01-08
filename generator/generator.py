@@ -27,7 +27,7 @@ def generate_password():
     numbers = '123456789'
     lowercase_letters = 'qwertyuiopasdfghjklzxcvbnm'
     uppercase_letters = lowercase_letters.upper()
-    special_characters = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~'
+    special_characters = r'!"#$%&()*+,-./:;<=>?@[\]^_`{|}~'
     psw = [random.choice(list(numbers)),
            random.choice(list(lowercase_letters)),
            random.choice(list(uppercase_letters)),

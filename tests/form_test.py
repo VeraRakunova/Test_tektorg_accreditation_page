@@ -2,10 +2,14 @@ import time
 
 from pages.form_page import FormPage
 from conftest import driver
+from logs import app_logger
+
+logger = app_logger.get_logger(__name__)
 
 class TestFormPage:
 
     def test_form_fio_rf(self,driver):
+        logger.info("Начат тест 1: заполнение данных для ФЛ резидента РФ ")
         form_page = FormPage(driver,'https://rn.tektorg.ru/#front/register')
         form_page.open()
         time.sleep(8)
@@ -17,6 +21,7 @@ class TestFormPage:
 
 
     def test_form_company_rf(self,driver):
+        logger.info("Начат тест 2: заполнение данных для ЮЛ резидента РФ ")
         form_page = FormPage(driver,'https://rn.tektorg.ru/#front/register')
         form_page.open()
         time.sleep(8)
@@ -27,6 +32,7 @@ class TestFormPage:
         assert form_page.sign_button_visible() == True, "тест заполнения полей для ЮЛ резидента РФ "
 
     def test_form_not_rf_inn(self,driver):
+        logger.info("Начат тест 3: заполнение данных для ФЛ нерезидента РФ ИНН")
         form_page = FormPage(driver,'https://rn.tektorg.ru/#front/register')
         form_page.open()
         time.sleep(8)
@@ -37,6 +43,7 @@ class TestFormPage:
         assert form_page.sign_button_visible() == True, "тест заполнения полей для ФЛ нерезидента РФ ИНН"
 
     def test_form_not_rf_tin(self,driver):
+        logger.info("Начат тест 4: заполнение данных для ФЛ нерезидента РФ TIN")
         form_page = FormPage(driver,'https://rn.tektorg.ru/#front/register')
         form_page.open()
         time.sleep(8)
