@@ -2,7 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class FormPageLocators:
-    """Локадоры для страницы аккредитации"""
+    """Локаторы для страницы аккредитации"""
+    LINK_AKK_PAGE = (By.XPATH, "//div[contains(@class,'x-treelist-row')]//div[contains(text(),'Аккредитация')]")
     FULL_NAME_COMPANY_FIO = (By.XPATH, "//div[contains(@class,'full-organization-name')]//input")
     RESIDENT_RF = (By.XPATH, "//a[contains(@class,'x-btn resident-RF')]")
     RESIDENT_INN = (By.XPATH, "//div[contains(@id,'container')]//input[contains(@id,'form-field-inn-search')]")

@@ -72,7 +72,21 @@ class FormPage(BasePage):
         try:
             self.element_is_visible(Locators.SIGN_ACCREDITATION)
         except TimeoutException:
+            logger.info('TimeoutException, нет кнопки Подписать и отправить заявку')
             return False
 
         return True
+
+    def link_accreditation_page_visible(self):
+        """
+        Проверка загрузки страницы
+        """
+        try:
+            self.element_is_visible(Locators.LINK_AKK_PAGE)
+        except TimeoutException:
+            logger.info('TimeoutException, не загрузилась страница/нет ссылки на страницу Аккредитации')
+            return False
+
+        return True
+
 
