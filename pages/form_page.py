@@ -1,4 +1,3 @@
-import time
 from selenium.common import TimeoutException
 from generator.generator import generated_resident_rf_fio_data, generated_resident_rf_company_data, \
     generated_not_resident_rf_inn_data, generated_not_resident_rf_tin_data, generated_user_personal_data, \
@@ -65,7 +64,6 @@ class FormPage(BasePage):
         self.element_is_visible(Locators.PASSWORD_CONFIRM).send_keys(user_auto.password_confirm)
         self.element_is_visible(Locators.CONSENT_PERS_DATA).click()
         self.element_is_visible(Locators.PIC_CODE).send_keys(user_auto.captcha)
-        time.sleep(5)
 
     def sign_button_visible(self):
         """
